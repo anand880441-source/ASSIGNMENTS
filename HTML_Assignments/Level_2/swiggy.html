@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store Online</title>
+    <!-- <link rel="stylesheet" href="swiggy.css"> -->
+
+    <style>
+        .top{
+            display: flex;
+            flex-direction: column;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        #sea{
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .nav{
+            background-color: rgb(92, 92, 228);
+            height: 400px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-around;
+            background-repeat: no-repeat;
+            background-image: url("data:image/webp;base64,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");
+        }
+
+        .nav_img{
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <a href="#">Add your location</a>
+        <small>To see items in your area</small>
+        <img src="" alt=""><br>
+        <input id="sea" placeholder="Search for..."  type="search">
+    </div><br>
+
+    <div class="nav">
+        <div> <img class="nav_img" src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_164/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/9/19/a03e3e9c-e8e3-49a1-8c1a-cc8070b54646_Freshcorner.png" alt=""> </div>
+        <div> <img class="nav_img" src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_164/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/9/19/46993b49-52ab-4b68-aa11-3726b0acf486_Indulgencecorner.png" alt=""> </div>
+        <div> <img class="nav_img" src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_164/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/9/21/d4b9e261-1b04-44bb-8dac-d14a6a47884e_Mobileselectronics.png" alt=""> </div>
+        <div> <img class="nav_img" src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_164/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/9/25/190927a6-75f9-4bb8-b249-a02eac92fe25_Cetaphil1.png" alt=""> </div>
+        <div> <img class="nav_img" src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_164/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/9/20/79ff0a53-74d4-4b7a-83e1-fb2c0ebb20d6_Groceryessentials.png" alt=""> </div>
+        <div> <img class="nav_img" src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_164/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/9/21/2a7dc59d-a232-422f-9b53-943ca2d72a21_d65afeae475e4bb5bd4f1f8da9d60503Homekitchen.png" alt=""> </div>
+        <div> <im class="nav_img"g src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_164/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/9/19/74c92fa5-9f72-4a52-8740-e1341756a0dd_Babycare.png" alt=""> </div>
+        <div> <img class="nav_img" src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_164/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/9/19/4e233377-edad-4a83-8981-0c85e36bfa13_Cleaningessentials.png" alt=""> </div>
+        <div> <img class="nav_img" src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_164/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/9/19/4db19be1-1879-405a-a371-ff5f0a80bf57_Healthwellness.png" alt=""> </div>
+        <div> <img class="nav_img" src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_164/MERCHANDISING_BANNERS/IMAGES/MERCH/2025/9/19/dd2a3c81-bee0-47f1-8c01-75c84fde8258_Toyscollection.png" alt=""> </div>
+    </div>
+</body>
